@@ -11,8 +11,12 @@
 
 @interface CreateSongController : UIViewController {
 	MessengerSystem * messenger;
+	
 	IBOutlet UITextField * titleText;
 	IBOutlet UITextField * artistText;
+	
+	IBOutlet UIButton * cancelButton;
+	
 }
 
 - (id) initCreateSongController;
@@ -22,4 +26,8 @@
 
 - (IBAction) titleEdited;
 - (IBAction) artistEdited;
+
+- (IBAction) cancelTapped;
+
+
 @end

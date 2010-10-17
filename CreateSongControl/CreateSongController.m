@@ -23,6 +23,13 @@
 
 
 - (void) createSongCenter:(NSNotification * )nort { 
+	NSMutableDictionary * dict = (NSMutableDictionary * )[nort userInfo];
+	NSString * exec = [messenger getExecAsString:dict];
+	
+	
+	if ([exec isEqualToString:@"ビューを外す"]) {
+		[self.view removeFromSuperview];
+	}
 	
 }
 
@@ -97,6 +104,10 @@
 	}
 }
 
+
+- (IBAction) cancelTapped {
+	[messenger callParent:@"新規作成キャンセル", nil];
+}
 
 - (void)dealloc {
     [super dealloc];

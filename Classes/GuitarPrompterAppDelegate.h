@@ -37,6 +37,7 @@
 /**
  タイトル画面での所作
  */
+- (void) titleInit:(NSMutableDictionary * )dict;
 - (void) titleProc:(NSMutableDictionary * )dict;
 
 

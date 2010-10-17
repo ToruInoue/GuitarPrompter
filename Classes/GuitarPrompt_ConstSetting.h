@@ -14,10 +14,12 @@
 #define GPTITLEVIEWCONT		(@"GPTitleViewController")
 #define GPCREATESONGVIEW	(@"GPCreateSongViewController")
 
+
+
+
 /**
  ステート名管理リスト
  */
-
 enum GP_STATES {
 	GP_STATE_TITLE_INIT,
 	GP_STATE_TITLE_PROC,

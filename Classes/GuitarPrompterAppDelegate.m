@@ -84,7 +84,7 @@
 }
 
 
-- (void) titleInit: (NSMutableDictionary * )dict {
+- (void) titleInit:(NSMutableDictionary * )dict {
 	
 	[messenger call:GPBASEVIEWCONT withExec:@"基本ビューにセット",
 	 [messenger tag:@"ビュー" val:tVCont.view],
@@ -124,6 +124,26 @@
 }
 
 - (void) createProc:(NSMutableDictionary * )dict {
+	NSString * exec = [messenger getExecAsString:dict];
+	
+	/**
+	 [messenger callParent:@"タイトルとアーティスト入力完了",
+	 [messenger tag:@"name" val:title],
+	 [messenger tag:@"pass" val:[artistText.text copy]],
+	 nil];
+	 */	 
+	if ([exec isEqualToString:@"タイトルとアーティスト入力完了"]) {
+		//曲名をつくったので保存
+		
+	}
+	
+	if ([exec isEqualToString:@"新規作成キャンセル"]) {
+		//新規作成キャンセルで、タイトル画面に戻る？のかな、スタックかな。
+		setState(GP_STATE_TITLE_INIT);
+		[messenger call:GPCREATESONGVIEW withExec:@"ビューを外す",nil];
+	}
+	
+	
 	
 }
 
